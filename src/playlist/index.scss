@@ -1,0 +1,26 @@
+@import "../scss/style";
+
+.header {
+    margin: 1rem;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.tracks {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto auto auto auto auto;
+    margin: 3rem;
+}
+
+.track {
+    background-color: hsl(194, 85%, 21%);
+    width: 15vw;
+    padding: 1rem;
+}
+
+.track-genre {
+    font-size: 0.8rem;
+}

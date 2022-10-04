@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programmers test</title>
+
+    <link rel="stylesheet" href="index.scss" />
+  </head>
+  <body>
+    <div id="target" class="loading">Loading...</div>
+
+    <script id="template" type="x-tmpl-mustache">
+      <div class="main">
+        <div class="topbar" >
+          <h1>Programmer test {{ name }}</h1>
+
+          <input id="inputfield" class="zoekveld" type="text" placeholder="Search playlists" value="{{inputValue}}" {{autoFocus}}">
+          {{#searched}}
+          <button onclick="window.location.replace('/')">Back to all</button>
+          {{/searched}}
+        </div>
+
+        {{#playlists}}
+        <div class="playlist" id="playlist-{{ PlaylistId }}" onclick="showPlaylist({{ PlaylistId }}, '{{ Name }}')">
+          <h4>{{ Name }}</h4>
+          <p>{{ Description }}</p>
+          {{^Description}}<p><i>This playlist has no description.</i></p>{{/Description}}
+        </div>
+        
+        {{/playlists}}
+
+        {{#failed}}
+          <div class="loading">{{.}}</div>
+        {{/failed}}
+
+      </div>
+    </script>
+
+    <script src="index.ts" type="module"></script>
+  </body>
+</html>

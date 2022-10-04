@@ -1,0 +1,27 @@
+@import "reset";
+
+// Global styling
+html {
+    background-color: hsl(330, 2%, 19%);
+    color: #fff;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.loading {
+    margin: 1rem;
+}
+
+button {
+    border: none;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 0.5rem;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}

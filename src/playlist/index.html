@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programmers test</title>
+
+    <link rel="stylesheet" href="index.scss" />
+</head>
+<body>
+    <div id="target" class="loading">Loading...</div>
+
+    <script id="template" type="x-tmpl-mustache">
+      <div class="header">
+        <h1>{{playlist.Name}}</h1>
+        <p><i>Total duration: {{ totalDuration }}</i></p>
+        <button onclick="goBack()">Go back</button>
+      </div>
+
+      <div id="main">
+        <div class="tracks">
+          {{#tracks}}
+            <div class="track">
+              <h4><b>{{ Name }}</b></h4>
+              <p class="track-genre"><i>{{ Genre }}</i></p>
+
+              <br />
+
+              <div>
+                <p>{{ RunTime }}   €{{ UnitPrice }}</p>
+              </div>
+            </div>
+          {{/tracks}}
+        </div>
+
+        {{^tracks}}<p>No tracks in this playlist</p>{{/tracks}}
+      </div>
+    </script>
+    <script src="index.ts" type="module"></script>
+</body>
+</html>
